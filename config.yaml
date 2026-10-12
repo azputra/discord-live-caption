@@ -1,0 +1,45 @@
+audio:
+  sample_rate: 16000
+  block_ms: 30
+  system_device: null
+  mic_device: null
+  save_audio: false
+
+vad:
+  provider: silero
+  threshold: 0.5
+  energy_threshold: 0.02
+  min_speech_ms: 250
+  min_silence_ms: 500
+  speech_pad_ms: 200
+  max_segment_s: 20
+  partial_interval_s: 2.5
+
+stt:
+  provider: faster-whisper
+  model_size: small
+  language: auto
+  device: auto
+  compute_type: auto
+  no_speech_threshold: 0.6
+
+translation:
+  provider: llm
+  mode: swap
+  target_language: en
+  llm_vendor: openai
+  openai_model: gpt-4o-mini
+  anthropic_model: claude-3-5-haiku-latest
+  context_segments: 5
+  display: both
+
+ui:
+  language: en
+  theme: system
+  overlay_opacity: 0.88
+  overlay_font_size: 18
+  overlay_lines: 6
+  summary_language: en
+
+logging:
+  level: INFO

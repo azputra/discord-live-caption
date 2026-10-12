@@ -1,0 +1,29 @@
+# Shared runtime (Windows and macOS)
+PySide6>=6.6.0
+numpy>=1.26
+sounddevice>=0.4.6
+python-dotenv>=1.0.1
+PyYAML>=6.0.1
+platformdirs>=4.2.0
+
+# Windows system-audio loopback. Not installed on macOS.
+pyaudiowpatch>=0.2.12.7; sys_platform == "win32"
+
+# Keeps the overlay above normal windows, including many macOS fullscreen spaces.
+pyobjc-framework-Cocoa>=10.0; sys_platform == "darwin"
+
+# Voice activity detection. Silero is preferred. webrtcvad has no Python 3.13 wheel;
+# the app falls back to a built-in energy VAD when the others cannot load.
+silero-vad>=5.1
+webrtcvad>=2.0.10; python_version < "3.13"
+
+# Speech to text
+faster-whisper>=1.0.3
+openai>=1.40.0
+
+# Translation
+anthropic>=0.34.0
+argostranslate>=1.9.6
+
+# Tests
+pytest>=8.0.0
